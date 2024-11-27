@@ -2,10 +2,10 @@ public class Prodotto {
     private int code;
     private String name;
     private String brand;
-    private double price;
-    private double iva;
+    private float price;
+    private float iva;
 
-    public Prodotto(int code, String name, String brand, double price, double iva){
+    public Prodotto(int code, String name, String brand, float price, float iva){
         this.code = code;
         this.name = name;
         this.brand = brand;
@@ -33,20 +33,28 @@ public class Prodotto {
         this.brand = brand;
     }
 
-    public double getPrice(){
+    public float getPrice(){
         return this.price;
     }
 
-    public void setPrice(double price){
+    public void setPrice(float price){
         this.price = price;
     }
 
-    public double getIva(){
+    public float getIva(){
         return this.iva;
     }
 
-    public void setIva(double iva){
+    public void setIva(float iva){
         this.iva = iva;
+    }
+
+    public String getPriceIva(){
+        return "Il prezzo inclusa l'iva è di " + (this.price + (this.price / 100 * this.iva)) + "€";
+    }
+    
+    public String getBasicPrice(){
+        return "Il prezzo base esclusa l'iva è di " + this.price + "€";
     }
 
 }
