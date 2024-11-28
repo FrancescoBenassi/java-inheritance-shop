@@ -1,26 +1,30 @@
 public class Televisore extends Prodotto {
-    private int size;
-    private String smart;
+    private float size;
+    private boolean smart;
 
-    public Televisore(int code, String name, String brand, float price, float iva, int size, String smart){
-        super(code, name, brand, price, iva);
+    public Televisore(String name, String brand, float price, float iva, float size, boolean smart){
+        super(name, brand, price, iva);
         this.size = size;
         this.smart = smart;
     }
 
-    public int getSize(){
+    public float getSize(){
         return this.size;
     }
 
-    public void setSize(int size){
+    public void setSize(float size){
         this.size = size;
     }
 
-    public String getSmart(){
+    public boolean getSmart(){
         return this.smart;
     }
 
-    public void setSmart(String smart){
+    public void setSmart(boolean smart){
         this.smart = smart;
+    }
+
+    public float getDiscountTelevision(){
+        return super.getPrice() - (super.getPrice() * 10 / 100);
     }
 }
