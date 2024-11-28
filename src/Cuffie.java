@@ -1,9 +1,9 @@
 public class Cuffie extends Prodotto {
     private String color;
-    private String wireless;
+    private boolean wireless;
 
-    public Cuffie(int code, String name, String brand, float price, float iva, String color, String wireless){
-       super(code, name, brand, price, iva);
+    public Cuffie(String name, String brand, float price, float iva, String color, boolean wireless){
+       super(name, brand, price, iva);
         this.color = color;
         this.wireless = wireless;
     }
@@ -16,11 +16,15 @@ public class Cuffie extends Prodotto {
         this.color = color;
     }
 
-    public String getWireless(){
+    public boolean getWireless(){
         return this.wireless;
     }
 
-    public void setWireless(String wireless){
+    public void setWireless(boolean wireless){
         this.wireless = wireless;
+    }
+
+    public float getDiscountHeadphones(){
+        return super.getPrice() - (super.getPrice() * 7 / 100);
     }
 }
