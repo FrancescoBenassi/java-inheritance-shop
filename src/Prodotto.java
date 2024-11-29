@@ -45,7 +45,7 @@ public class Prodotto {
     }
 
     public float getIva() {
-        return this.iva;
+        return this.iva / 100;
     }
 
     public void setIva(float iva) {
