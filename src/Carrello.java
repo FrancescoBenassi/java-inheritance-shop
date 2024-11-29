@@ -4,20 +4,32 @@ public class Carrello {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        // Si chiede all'utente di inserire quanti prodotti vuole aggiungere al carrello
+        // e si chiede anche se possiede la tessera fedeltà
         System.out.println("Inserisci numericamente quanti prodotti vuoi aggiungere al carrello");
         int shopQuantity = Integer.parseInt(input.nextLine());
         System.out.println("Inserisci 'true' se possiedi la tessera fedeltà");
         boolean pDiscount = Boolean.parseBoolean(input.nextLine());
 
+        // Creazione del carrello dove la lunghezza dell'Array dipende dal numero
+        // inserito dall'utente quando gli viene chiesto quanti prodotti vuole
+        // aggiungere al carrello
         Prodotto[] cart = new Prodotto[shopQuantity];
         int cartLenght = cart.length;
+
+        // Creazione della variabile dove salverà la somma dei vari prezzi del carrello
         float sum = 0;
 
         for (int i = 0; i < cartLenght; i++) {
+
+            // Si chiede all'utente quale prodotto vuole acquistare
             System.out.println(
                     "Inserisci 1 per aggiungere uno smartphone, inserisci 2 per aggiungere un televisore oppure inserisci 3 per aggiungere delle cuffie");
             int choiceUser = Integer.parseInt(input.nextLine());
 
+            // Se il numero per selezionare è valido si parte con la compilazione dei valori
+            // altrimenti ricomincia il ciclo fino a quando non inserirà correttamente il
+            // numero della selezione del prodotto
             if (choiceUser == 1 || choiceUser == 2 || choiceUser == 3) {
                 System.out.println("Inserisci il nome del prodotto");
                 String pName = input.nextLine();
