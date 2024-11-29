@@ -26,6 +26,7 @@ public class Carrello {
             System.out.println(
                     "Inserisci 1 per aggiungere uno smartphone, inserisci 2 per aggiungere un televisore oppure inserisci 3 per aggiungere delle cuffie");
             int choiceUser = Integer.parseInt(input.nextLine());
+            float sumTemponary = 0;
 
             // Se il numero per selezionare è valido si parte con la compilazione dei valori
             // altrimenti ricomincia il ciclo fino a quando non inserirà correttamente il
@@ -47,14 +48,17 @@ public class Carrello {
                     int sMemory = Integer.parseInt(input.nextLine());
                     Smartphone smartphone = new Smartphone(pName, pBrand, pPrice, pIva, sImei, sMemory);
                     if (pDiscount && sMemory <= 32) {
-                        sum += smartphone.getDiscountSmartphone();
-                        sum = smartphone.getPriceIva();
+                        sumTemponary = smartphone.getDiscountSmartphone();
+                        sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
+                        sum += sumTemponary;
                     } else if (pDiscount) {
-                        sum += smartphone.getDiscountPrice();
-                        sum = smartphone.getPriceIva();
+                        sumTemponary = smartphone.getDiscountPrice();
+                        sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
+                        sum += sumTemponary;
                     } else {
-                        sum += smartphone.getPrice();
-                        sum = smartphone.getPriceIva();
+                        sumTemponary = smartphone.getPriceIva();
+                        sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
+                        sum += sumTemponary;
                     }
                     cart[i] = smartphone;
                 } else if (choiceUser == 2) {
@@ -64,14 +68,18 @@ public class Carrello {
                     boolean tSmart = Boolean.parseBoolean(input.nextLine());
                     Televisore television = new Televisore(pName, pBrand, pPrice, pIva, tSize, tSmart);
                     if (pDiscount && !tSmart) {
-                        sum += television.getDiscountTelevision();
-                        sum += television.getPriceIva();
+                        sumTemponary = television.getDiscountTelevision();
+                        sumTemponary = sumTemponary + (sumTemponary * television.getIva());
+                        System.out.println(sumTemponary);
+                        sum += sumTemponary;
                     } else if (pDiscount) {
-                        sum += television.getDiscountPrice();
-                        sum += television.getPriceIva();
+                        sumTemponary = television.getDiscountPrice();
+                        sumTemponary = sumTemponary + (sumTemponary * television.getIva());
+                        sum += sumTemponary;
                     } else {
-                        sum += television.getPrice();
-                        sum = television.getPriceIva();
+                        sumTemponary = television.getPriceIva();
+                        sumTemponary = sumTemponary + (sumTemponary * television.getIva());
+                        sum += sumTemponary;
                     }
                     cart[i] = television;
                 } else if (choiceUser == 3) {
@@ -81,14 +89,17 @@ public class Carrello {
                     boolean hWireless = Boolean.parseBoolean(input.nextLine());
                     Cuffie headphones = new Cuffie(pName, pBrand, pPrice, pIva, hColor, hWireless);
                     if (pDiscount && !hWireless) {
-                        sum += headphones.getDiscountHeadphones();
-                        sum += headphones.getPriceIva();
+                        sumTemponary = headphones.getDiscountHeadphones();
+                        sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
+                        sum += sumTemponary;
                     } else if (pDiscount) {
-                        sum += headphones.getDiscountPrice();
-                        sum += headphones.getPriceIva();
+                        sumTemponary = headphones.getDiscountPrice();
+                        sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
+                        sum += sumTemponary;
                     } else {
-                        sum += headphones.getPrice();
-                        sum = headphones.getPriceIva();
+                        sumTemponary = headphones.getPriceIva();
+                        sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
+                        sum += sumTemponary;
                     }
                     cart[i] = headphones;
                 }
