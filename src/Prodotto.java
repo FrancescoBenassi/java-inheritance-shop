@@ -6,6 +6,7 @@ public class Prodotto {
     private String brand;
     private float price;
     private float iva;
+    private Materiali[] materials;
 
     public Prodotto(String name, String brand, float price, float iva) {
         Random rand = new Random();

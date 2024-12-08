@@ -1,6 +1,7 @@
 public class Televisore extends Prodotto {
     private float size;
     private boolean smart;
+    private Schermo display;
 
     public Televisore(String name, String brand, float price, float iva, float size, boolean smart){
         super(name, brand, price, iva);

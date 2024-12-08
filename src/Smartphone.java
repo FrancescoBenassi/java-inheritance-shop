@@ -1,6 +1,8 @@
 public class Smartphone extends Prodotto {
     private int codeImei;
     private int memory;
+    private Processore processor;
+    private Schermo display;
 
     public Smartphone(String name, String brand, float price, float iva, int codeImei, int memory) {
         super(name, brand, price, iva);
