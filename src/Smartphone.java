@@ -4,8 +4,8 @@ public class Smartphone extends Prodotto {
     private Processore processor;
     private Schermo display;
 
-    public Smartphone(String name, String brand, float price, float iva, int codeImei, int memory) {
-        super(name, brand, price, iva);
+    public Smartphone(String name, String brand, float price, float iva, int codeImei, int memory, boolean discount) {
+        super(name, brand, price, iva, discount);
         this.codeImei = codeImei;
         this.memory = memory;
     }
@@ -26,7 +26,14 @@ public class Smartphone extends Prodotto {
         this.memory = memory;
     }
 
-    public float getDiscountSmartphone() {
-        return super.getPrice() - (super.getPrice() * 5 / 100);
+    @Override
+    public float getDiscountPrice() {
+        if (super.getDiscount() && this.memory <= 32) {
+            return super.getPrice() - (super.getPrice() * 5 / 100);
+        } else if (super.getDiscount()) {
+            return super.getDiscountPrice();
+        } else {
+            return super.getBasicPrice();
+        }
     }
 }
