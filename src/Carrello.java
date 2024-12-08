@@ -51,17 +51,17 @@ public class Carrello {
                     sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
                     sum += sumTemponary;
                     // if (pDiscount && sMemory <= 32) {
-                    //     sumTemponary = smartphone.getDiscountPrice();
-                    //     sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = smartphone.getDiscountPrice();
+                    // sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
+                    // sum += sumTemponary;
                     // } else if (pDiscount) {
-                    //     sumTemponary = smartphone.getDiscountPrice();
-                    //     sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = smartphone.getDiscountPrice();
+                    // sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
+                    // sum += sumTemponary;
                     // } else {
-                    //     sumTemponary = smartphone.getPriceIva();
-                    //     sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = smartphone.getPriceIva();
+                    // sumTemponary = sumTemponary + (sumTemponary * smartphone.getIva());
+                    // sum += sumTemponary;
                     // }
                     cart[i] = smartphone;
                 } else if (choiceUser == 2) {
@@ -74,18 +74,18 @@ public class Carrello {
                     sumTemponary = sumTemponary + (sumTemponary * television.getIva());
                     sum += sumTemponary;
                     // if (pDiscount && !tSmart) {
-                    //     sumTemponary = television.getDiscountTelevision();
-                    //     sumTemponary = sumTemponary + (sumTemponary * television.getIva());
-                    //     System.out.println(sumTemponary);
-                    //     sum += sumTemponary;
+                    // sumTemponary = television.getDiscountTelevision();
+                    // sumTemponary = sumTemponary + (sumTemponary * television.getIva());
+                    // System.out.println(sumTemponary);
+                    // sum += sumTemponary;
                     // } else if (pDiscount) {
-                    //     sumTemponary = television.getDiscountPrice();
-                    //     sumTemponary = sumTemponary + (sumTemponary * television.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = television.getDiscountPrice();
+                    // sumTemponary = sumTemponary + (sumTemponary * television.getIva());
+                    // sum += sumTemponary;
                     // } else {
-                    //     sumTemponary = television.getPriceIva();
-                    //     sumTemponary = sumTemponary + (sumTemponary * television.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = television.getPriceIva();
+                    // sumTemponary = sumTemponary + (sumTemponary * television.getIva());
+                    // sum += sumTemponary;
                     // }
                     cart[i] = television;
                 } else if (choiceUser == 3) {
@@ -98,17 +98,17 @@ public class Carrello {
                     sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
                     sum += sumTemponary;
                     // if (pDiscount && !hWireless) {
-                    //     sumTemponary = headphones.getDiscountHeadphones();
-                    //     sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = headphones.getDiscountHeadphones();
+                    // sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
+                    // sum += sumTemponary;
                     // } else if (pDiscount) {
-                    //     sumTemponary = headphones.getDiscountPrice();
-                    //     sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = headphones.getDiscountPrice();
+                    // sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
+                    // sum += sumTemponary;
                     // } else {
-                    //     sumTemponary = headphones.getPriceIva();
-                    //     sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
-                    //     sum += sumTemponary;
+                    // sumTemponary = headphones.getPriceIva();
+                    // sumTemponary = sumTemponary + (sumTemponary * headphones.getIva());
+                    // sum += sumTemponary;
                     // }
                     cart[i] = headphones;
                 }
@@ -120,9 +120,9 @@ public class Carrello {
 
         System.out.println("Prodotti nel carrello:");
         for (Prodotto prodotto : cart) {
-            System.out.println(prodotto.getName());
+            System.out.println("Il nome del prodotto comprato è " + prodotto.getName() + ", il suo costo senza iva è "
+                    + prodotto.getBasicPrice() + "€ aggiungendo l'iva il prezzo del valore del proddotto comprato senza sconti è di " + prodotto.getPriceIva());
         }
-
         System.out.println("Il totale del carrelo è di " + sum + "€");
 
         input.close();

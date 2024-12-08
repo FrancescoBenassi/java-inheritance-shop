@@ -72,7 +72,11 @@ public class Prodotto {
     }
 
     public float getDiscountPrice() {
-        return this.price - (this.price * 2 / 100);
+        if (discount) {
+            return this.price - (this.price * 2 / 100);
+        } else {
+            return this.price;
+        }
     }
 
 }
